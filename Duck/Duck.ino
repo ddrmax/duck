@@ -19,11 +19,11 @@
 //#define DL
 //const char *AP = " 🆘 DUCK EMERGENCY PORTAL";
 
-//#define MD
-//const char *AP = " 🆘 MAMA EMERGENCY PORTAL";
+#define MD
+const char *AP = " 🆘 MAMA EMERGENCY PORTAL";
 
-#define PD
-const char *AP = " 🆘 PAPA EMERGENCY PORTAL";
+//#define PD
+//const char *AP = " 🆘 PAPA EMERGENCY PORTAL";
 
 #define THIRTYMIN (1000UL * 60 * 30);
 unsigned long rolltime = millis() + THIRTYMIN;
@@ -147,6 +147,39 @@ void setupLoRa()
 
   //  LoRa.setSyncWord(0xF3);         // ranges from 0-0xFF, default 0x34
   LoRa.enableCrc();             // Activate crc
+}
+
+//Setup LED
+int ledR = 12;
+int ledG = 13;
+int ledB = 0;
+
+void setupLED() {
+  ledcAttachPin(ledR, 1); // assign RGB led pins to channels
+  ledcAttachPin(ledG, 2);
+  ledcAttachPin(ledB, 3);
+  
+  // Initialize channels 
+  // channels 0-15, resolution 1-16 bits, freq limits depend on resolution
+  // ledcSetup(uint8_t channel, uint32_t freq, uint8_t resolution_bits);
+  ledcSetup(1, 12000, 8); // 12 kHz PWM, 8-bit resolution
+  ledcSetup(2, 12000, 8);
+  ledcSetup(3, 12000, 8);
+}
+
+void setColor(int red, int green, int blue)
+{
+  ledcWrite(1, red);
+  ledcWrite(2, green);
+  ledcWrite(3, blue);  
+}
+
+//Setup Button
+int sensorVal;
+bool turnOn = false;
+
+void setupButton() {
+  pinMode(25, INPUT_PULLUP);
 }
 
 void test2() {
@@ -477,6 +510,10 @@ void receive(int packetSize)
 {
   if (packetSize != 0)
   {
+    if(turnOn) {
+      setColor(0,13,0);
+      delay(3000);
+    }
     byte byteCode, mLength;
     Serial.print("Packet Received");
     // read packet
