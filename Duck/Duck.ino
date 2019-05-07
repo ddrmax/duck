@@ -510,10 +510,10 @@ void receive(int packetSize)
 {
   if (packetSize != 0)
   {
-    if(turnOn) {
+//    if(turnOn) {
       setColor(0,13,0);
       delay(3000);
-    }
+//    }
     byte byteCode, mLength;
     Serial.print("Packet Received");
     // read packet
