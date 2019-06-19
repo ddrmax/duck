@@ -86,7 +86,7 @@ void loop()
   }
 
   receive(LoRa.parsePacket());
-  if (offline.fromCiv == 0 && offline.phone != NULL && offline.phone != "")
+  if (offline.fromCiv == 0 && offline.msg != NULL && offline.msg != "")
   {
     offline.path = offline.path + "," + empty.duckID;
     Serial.println(offline.path);
