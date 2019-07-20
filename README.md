@@ -1,11 +1,11 @@
-# ClusterDuck Overview
-### Problem
-Hurricanes, earthquakes, tornadoes, wildfires, and other events will continue to test the strength of the infrastructure modern society relies on, such as communication equipment like cellular networks.
+# Présentation ClusterDuck
+### Problèmes
+Toutes les formes de catastrophes naturelles (Tempêtes, tornades, incendies de grande envergure tremblements de terre et inondations) Peuvent mettre a mal les infrastructures actuelles de communication (Téléphonie fixe, Fibre, GSM, 4G)
 
-Communications infrastructure needs to be restored within **72 hours** after which the survival chances of victims decrease drastically. 
+Dans ces cas extrêmes les infrastructures de communication doivent être opérationnelles dans les 72 heures qui sont critiques pour les chances de survie des victimes 
 
 ### Solution
-Our IoT hardware solution **`ClusterDuck`** addresses this issue. **`Ducks`** are miniaturized multi-terrain wifi-enabled devices that are dispersed in **Clusters** in areas where traditional infrastructure and communications is offline. 
+La solution matérielle IoT **`ClusterDuck`** permet de résoudre ce problème. Les **`Ducks`** are miniaturized multi-terrain wifi-enabled devices that are dispersed in **Clusters** in areas where traditional infrastructure and communications is offline. 
 
 ![overview](https://media.wired.com/photos/5bd3991147d18c4c60798e17/master/w_1616,c_limit/ProjectOwl-Inline_01.jpg)
 #### Fig. 1 - Ducks to OWL
